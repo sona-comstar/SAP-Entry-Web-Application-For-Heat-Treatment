@@ -1,0 +1,94 @@
+<p-toast></p-toast>
+<app-base-loader [loader]="isLoading"></app-base-loader>
+
+<div class="container" [formGroup]="sapForm">
+
+  <!-- ROW 1 - Sheet Name, Part Name, Plant Code, Production Version, Machine Name -->
+  <div class="input-row row-full">
+
+    <!-- <div class="float-label">
+      <label class="column-header">Sheet Name</label>
+      <p-dropdown
+        [options]="sheetNames"
+        formControlName="sheetName"
+        placeholder="Select Sheet"
+        class="custom-dropdown"
+        [filter]="true"
+        filterBy="label"
+        [style]="{'width': '100%'}"
+        (onChange)="onSheetNameChange($event)">
+      </p-dropdown>
+    </div> -->
+
+    <div class="float-label">
+      <label class="column-header">Part Name</label>
+      <p-dropdown
+        [options]="partNames"
+        formControlName="coltPartName"
+        placeholder="Select Part Name"
+        class="custom-dropdown"
+        [filter]="true"
+        filterBy="label"
+        [style]="{'width': '100%'}"
+        (onChange)="onPartNameChange($event)">
+      </p-dropdown>
+    </div>
+
+    <div class="float-label">
+      <label class="column-header" for="coltPlant">Plant Code</label>
+      <input type="text" id="coltPlant" formControlName="coltPlant" readonly placeholder=" " />
+    </div>
+
+    <div class="float-label">
+      <label class="column-header">Production Version</label>
+      <p-dropdown
+        [options]="machineOptions"
+        formControlName="prodVersion"
+        placeholder="Production Version"
+        [style]="{'width': '100%'}"
+        [disabled]="!sapForm.value.coltPartName">
+      </p-dropdown>
+    </div>
+
+    <!-- <div class="float-label">
+      <label class="column-header">Production Version</label>
+      <p-dropdown
+        [options]="prodVersionOptions"
+        formControlName="prodVersion"
+        placeholder="Production Version"
+        [style]="{'width': '100%'}"
+        [disabled]="!sapForm.value.coltMachine">
+      </p-dropdown>
+    </div> -->
+
+  </div>
+
+  <!-- ROW 2 - Quantity and Batch (Half Width) -->
+  <div class="input-row row-half">
+
+    <div class="float-label">
+      <label class="column-header" for="colaQuantity">Quantity</label>
+      <input type="number" id="colaQuantity" formControlName="colaQuantity" placeholder=" " />
+    </div>
+
+<div class="float-label">
+  <label class="column-header" for="coltBatch">Batch</label>
+
+  <input
+    type="text"
+    id="coltBatch"
+    formControlName="coltBatch"
+    maxlength="5"
+    placeholder=" "
+    pattern="[A-Z0-9]{0,5}"
+    (input)="onBatchInput($event)"
+  />
+</div>
+
+  </div>
+
+  <div class="button-container">
+    <button type="submit" (click)="onSubmit()">Submit</button>
+  </div>
+
+</div>

@@ -1,0 +1,128 @@
+/* Container for input fields */
+.input-row {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Full width row for first row */
+.input-row.row-full {
+  width: 95%;
+}
+
+/* Half width row for second row */
+.input-row.row-half {
+  width: 40%;
+}
+
+/* Add margin to the first row */
+.input-row:first-of-type {
+  margin-top: 100px;
+}
+
+/* Input styling */
+input {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Center button */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Button styling */
+.button-container button {
+  width: 250px;
+  margin-top: 5px;
+  padding: 12px 20px;
+  background-color: #393737;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+  background-color: #070606;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .input-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .input-row.row-full {
+    width: 90%;
+  }
+  
+  .input-row.row-half {
+    width: 90%;
+  }
+  
+  .float-label {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+/* Style for floating labels */
+.float-label {
+  position: relative;
+  flex: 1;
+  min-width: 180px;
+}
+
+/* Column header styling */
+.float-label .column-header {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+/* Center the placeholder text */
+.float-label input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Ensure dropdowns inside float-label have proper width */
+.float-label p-dropdown {
+  width: 100%;
+  display: block;
+}
+
+/* Force PrimeNG dropdown to take full width */
+.float-label ::ng-deep .p-dropdown {
+  width: 100% !important;
+}
+
+.float-label ::ng-deep .p-dropdown .p-dropdown-label {
+  width: 100%;
+  text-align: center;
+}
+
+/* Disabled dropdown styling */
+.float-label ::ng-deep .p-dropdown.p-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

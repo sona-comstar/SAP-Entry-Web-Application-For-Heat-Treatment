@@ -1,0 +1,97 @@
+/* Container for input fields */
+.input-row {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  width: 100%; /* Makes sure the inputs are full-width relative to the container */
+}
+
+/* Add this class to specifically target the top row */
+.input-row.top-row {
+  margin-top: 100px; /* Pushes the top row 100px down */
+}
+
+/* Input styling */
+input {
+  width: 250px;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.dropdown-row {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+/* Center button */
+.button-container {
+  display: flex;
+  justify-content: center; /* Center buttons horizontally */
+  gap: 10px; /* Space between buttons */
+}
+
+/* Button styling */
+.button-container button {
+  width: 250px;
+  margin-top: 5px;
+  padding: 12px 20px;
+  background-color: #393737;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+  background-color: #070606;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .input-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* Style for floating labels */
+.float-label {
+  position: relative;
+  margin-bottom: 20px;
+  width: 250px;
+}
+
+/* Center the placeholder text */
+.float-label input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center; /* Center text inside the input */
+}
+
+.float-label label {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  font-size: 16px;
+  color: #aaa;
+  transition: all 0.2s ease;
+  pointer-events: none;
+  transform: translateY(-50%); /* Center the label vertically */
+}
+
+.float-label input:focus + label,
+.float-label input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 10px;
+  font-size: 12px;
+  color: #007bff; /* Change to your preferred color */
+}

@@ -1,0 +1,49 @@
+<!--<router-outlet></router-outlet> &lt;!&ndash; This is where the routed components will be displayed &ndash;&gt;-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAP Entry</title>
+  <!--  <link rel="stylesheet" href="styles.css"> &lt;!&ndash; Link to your global CSS &ndash;&gt;-->
+</head>
+<body>
+<div class="page-wrapper">
+  <header id="header" class="fixed-header">
+    <nav class="nav-bar">
+
+      <!-- LEFT : LOGO -->
+      <div class="nav-left">
+        <img src="assets/sonaComstar.png" alt="Sona Comstar Logo">
+      </div>
+
+      <!-- CENTER : TITLE -->
+      <div class="nav-center">
+        HEAT TREATMENT SAP Entry Posting
+      </div>
+
+      <!-- RIGHT : NAV -->
+      <div class="nav-right">
+        <!-- <a routerLink="/" class="nav-button">Gear Shop</a> -->
+      </div>
+
+    </nav>
+  </header>
+
+
+  <div class="content-container">
+    <router-outlet></router-outlet> <!-- Content of different routes will be injected here -->
+  </div>
+
+  <footer id="footer" class="footer">
+    <div class="footer-content">
+      <p>Developed by: PRAYAG GARG</p>
+      <p>Phone Number: (+91)-8700216275</p>
+      <p>Email: <a href="mailto:prayag.garg@sonacomstar.com" style="color: white;text-decoration: none;">prayag.garg&#64;sonacomstar.com</a></p>
+
+      <p>&copy; 2024 SONA COMSTAR. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
